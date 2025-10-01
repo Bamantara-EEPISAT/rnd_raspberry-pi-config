@@ -2,7 +2,7 @@
 
 # --- Configuration ---
 LOGIN_URL="YOUR_REQUEST_URL_FROM_STEP_1"
-USERNAME="your_student_id"
+USERNAME="username@prodi.student.pens.ac.id"
 PASSWORD="your_password"
 
 # --- Send the POST request to log in ---
