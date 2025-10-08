@@ -1,0 +1,9 @@
+# Make your raspberry pi with hotspot for more accessibile way of developing
+
+1. Buy wifi dongle
+2. Wifi dongle will act as wlan1, you can make sure it again by:
+$ nmcli device
+3. run this command
+$ sudo nmcli device wifi hotspot ssid <hotspot name> password <hotspot password> ifname wlan1
+4. check current connection
+$ nmcli connection
