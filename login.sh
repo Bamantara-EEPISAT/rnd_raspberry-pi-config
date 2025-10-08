@@ -1,5 +1,24 @@
 #!/bin/bash
 
+# Define the network interface (e.g., wlan0 for WiFi)
+IFACE="wlan0"
+# Define a maximum wait time in seconds (optional)
+MAX_WAIT=60
+COUNT=0
+
+# Loop until the interface has an assigned IP address
+while ! ip addr show dev $IFACE | grep -q 'inet '; do
+    if [ $COUNT -ge $MAX_WAIT ]; then
+        echo "Error: Timed out waiting for IP address on $IFACE."
+        exit 1
+    fi
+    echo "Waiting for IP address on $IFACE..."
+    sleep 5
+    COUNT=$((COUNT+5))
+done
+
+echo "Network initialized. Proceeding with captive portal login."
+
 # --- Configuration ---
 LOGIN_URL="https://iac2.pens.ac.id:8003/index.php?zone=eepiswlan"
 COOKIE_FILE="cookies.txt"
