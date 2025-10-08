@@ -28,7 +28,7 @@ echo -e "\n[STEP 2/5] Installing required build and runtime dependencies..." | t
 # Core dependencies: cmake, graphics libs (mesa), input libs, system utilities
 DEPS="cmake libgl1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev libdrm-dev libgbm-dev \
       ttf-mscorefonts-installer fontconfig libsystemd-dev libinput-dev libudev-dev \
-      libxkbcommon-dev git curl build-essential libserialport-dev evtest"
+      libxkbcommon-dev git curl build-essential libserialport-dev evtest python3-flask"
 
 sudo apt install -y $DEPS >> "$LOG_FILE" 2>&1
 sudo fc-cache -f -v >> "$LOG_FILE" 2>&1
